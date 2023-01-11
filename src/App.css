@@ -1,38 +1,61 @@
 .App {
+  min-height: 100%;
   text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: navy;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.nav-logo {
+  color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img-quantity {
+  cursor: pointer;
+}
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+.knives-images {
+  border-radius: 16px;
+  height: 300px;
+  width: 300px;
+}
+.knives-name {
+  color: black;
+}
+.knives-list {
+  display: grid;
+  grid-template-columns: .1fr .1fr .1fr;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  gap: 32px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5em;
+  background-color: #d4d4d4;
+  border-radius: 32px;
 }
