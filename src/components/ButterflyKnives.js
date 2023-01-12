@@ -5,16 +5,6 @@ import { useState } from 'react';
 import Cart from './Cart';
 const ButterflyKnives = ({handleClick}) => {
 
-
-    console.log('bknives', handleClick)
-    const [count, setCount] = useState(0);
-    // function handleClick(e) {
-    //     const buttonID = e.target.id.slice(-1);
-    //     setCount(count + document.getElementById(`input${buttonID}`));
-    // }
-
-
-
     function handleImgClick(e) {
         const inputID = e.target.id.slice(-1)
         const selectInput = document.getElementById(`input${inputID}`)
@@ -25,7 +15,7 @@ const ButterflyKnives = ({handleClick}) => {
             <div className='knives-list'>
                 {(butterflyKnifeImages.map((img, index) => (
                     <div key={index} className="card">
-                        <img className='knives-images' alt={img.imgName} src={img.img} />
+                        <img id={'butterflyknife' + index} className='knives-images' alt={img.imgName} src={img.img} />
                         <h3 className='knives-name'>{img.imgName}</h3>
                         <div className="quantity">
                             <img onClick={(e) => handleImgClick(e)} id={"minus" + index} className="img-quantity" alt="minus" src={minus} />
