@@ -8,22 +8,31 @@ import butterflyknife6 from '../img/butterfly-knife6.jpeg'
 
 const butterflyKnifeImages = [{
     img: butterflyknife1,
-    imgName: "Angel's Wing"
+    imgName: "Angel's Wing",
+    price: 777.77
 },{
     img: butterflyknife2,
-    imgName: "Fallen Angel's Wing"
+    imgName: "Fallen Angel's Wing",
+    price: 275.00
 },{
     img: butterflyknife3,
     imgName: "Flametongue",
+    price: 291.99
+
 },{
     img: butterflyknife4,
-    imgName: "Fallen Angel's Wing V2"
+    imgName: "Fallen Angel's Wing V2",
+    price: 349.99,
 },{
     img: butterflyknife5,
-    imgName: "Rivers of Blood"
+    imgName: "Mark of the Devil",
+    price: 666.66,
+
 },{
     img: butterflyknife6,
-    imgName: "Static's Void"
+    imgName: "Static's Void",
+    price: 287.00
+
 }]
 
 export default butterflyKnifeImages;

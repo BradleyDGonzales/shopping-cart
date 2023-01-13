@@ -17,6 +17,7 @@ const ButterflyKnives = ({handleClick}) => {
                     <div key={index} className="card">
                         <img id={'butterflyknife' + index} className='knives-images' alt={img.imgName} src={img.img} />
                         <h3 className='knives-name'>{img.imgName}</h3>
+                        <p className='knives-price' id={"price" + index}>${img.price.toFixed(2)}</p>
                         <div className="quantity">
                             <img onClick={(e) => handleImgClick(e)} id={"minus" + index} className="img-quantity" alt="minus" src={minus} />
                             <input defaultValue={0} id={'input' + index} type="number"></input>

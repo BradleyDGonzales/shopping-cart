@@ -39,8 +39,17 @@ nav {
   height: 300px;
   width: 300px;
 }
+.knives-images.cart {
+  width: 175px;
+  height: 175px;
+}
 .knives-name {
   color: black;
+}
+.knives-list.cart{
+  display: grid;
+  grid-template-columns: .1fr;
+  border: 2px solid green;
 }
 .knives-list {
   display: grid;
@@ -58,4 +67,8 @@ nav {
   padding: 5em;
   background-color: #d4d4d4;
   border-radius: 32px;
+}
+
+.cartCards {
+  border: 2px solid red;
 }
