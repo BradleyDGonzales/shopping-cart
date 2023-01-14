@@ -15,7 +15,7 @@ const Cart = ({ cartItems, handleImgClickOnCart }) => {
                         <div className="itemSummary">
                             <div className="itemName">
                                 <img id={"item" + index} className='knives-images cart' src={image.img} alt={"testingimg"} />
-                                <span>{image.imgName}</span>
+                                <span className="itemImgName">{image.imgName}</span>
                             </div>
                             <div className="quantity">
                                 <img onClick={(e) => handleImgClickOnCart(e)} id={"minus" + index} className="img-quantity" alt="minus" src={minus} />
