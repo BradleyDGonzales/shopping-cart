@@ -40,15 +40,15 @@ nav {
   width: 300px;
 }
 .knives-images.cart {
-  width: 175px;
-  height: 175px;
+  width: 120px;
+  height: 120px;
 }
 .knives-name {
   color: black;
 }
 .knives-list.cart{
-  display: grid;
-  grid-template-columns: .1fr;
+  display: flex;
+  justify-content: left;
   border: 2px solid green;
 }
 .knives-list {
@@ -59,6 +59,11 @@ nav {
   border: 2px solid red;
   gap: 32px;
 }
+.itemSummary {
+  display: grid;
+  grid-template-rows: .1fr .1fr .1fr;
+  border: 2px solid blue;
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -68,7 +73,18 @@ nav {
   background-color: #d4d4d4;
   border-radius: 32px;
 }
+.cartItems {
+  display: grid;
+  grid-template-columns: .1fr .1fr;
+  background-color: #d4d4d4;
+  border: 4px solid red;
 
-.cartCards {
-  border: 2px solid red;
+}
+.exitbutton {
+  justify-self: flex-end;
+  font-size: 30px;
+}
+.quantity {
+  display: grid;
+  grid-template-columns: .1fr .1fr 1fr;
 }

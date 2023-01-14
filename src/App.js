@@ -12,9 +12,9 @@ import { useEffect, useState } from "react";
 const App = () => {
 
   const [count, setCount] = useState(0);
-  const [cartItems, setCartItems] = useState([{}])
-
-  const sendItemToCart = (item, amt, price) => {
+  const [cartItems, setCartItems] = useState([{}]);
+  const [imgName, setImgName] = useState('');
+  const sendItemToCart = (item, amt, price, imgname) => {
     console.log('myprice', price);
     const itemImg = document.getElementById(item);
     if (cartItems.length === 1) {
@@ -26,6 +26,7 @@ const App = () => {
             quantity: amt,
             price: price,
             subtotal: price * amt,
+            imgName: imgname,
           }
         ]
       )
@@ -38,7 +39,8 @@ const App = () => {
               ...existingItem,
               quantity: existingItem.quantity + amt,
               price: price,
-              subtotal: price * (existingItem.quantity + amt)
+              subtotal: price * (existingItem.quantity + amt),
+              imgName: imgname,
             }
           }
           else {
@@ -56,6 +58,7 @@ const App = () => {
               quantity: amt,
               price: price,
               subtotal: price * amt,
+              imgName: imgname,
             }
           ]
         )
@@ -70,26 +73,28 @@ const App = () => {
     console.log(itemID)
     if (itemToChange.target.alt === "minus") {
       const selectInput = document.getElementById(`input${itemID}`);
-      selectInput.value = Number(selectInput.value) - 1;
+      selectInput.value === "1" ? selectInput.value = "1" :  selectInput.value = Number(selectInput.value) - 1;
       const selectKnifeImg = document.getElementById(`item${itemID}`)
       console.log(selectKnifeImg.src)
-      setCount(count - 1);
-      const updatedCartItem = cartItems.map(existingItem => {
-        if (existingItem.img === selectKnifeImg.src) {
-          return {
-            ...existingItem,
-            quantity: existingItem.quantity - 1,
-            price: existingItem.price,
-            subtotal: existingItem.price * (existingItem.quantity - 1)
+      if (count !== 1) {
+        setCount(count - 1);
+        const updatedCartItem = cartItems.map(existingItem => {
+          if (existingItem.img === selectKnifeImg.src) {
+            return {
+              ...existingItem,
+              quantity: existingItem.quantity - 1,
+              price: existingItem.price,
+              subtotal: existingItem.price * (existingItem.quantity - 1)
+            }
           }
-        }
-        else {
-          return existingItem;
-        }
-      });
-      setCartItems(updatedCartItem);
+          else {
+            return existingItem;
+          }
+        });
+        setCartItems(updatedCartItem);
+      }
     }
-    else if (itemToChange.target.alt === "plus" ) {
+    else if (itemToChange.target.alt === "plus") {
       const selectInput = document.getElementById(`input${itemID}`);
       selectInput.value = Number(selectInput.value) + 1;
       const selectKnifeImg = document.getElementById(`item${itemID}`)
@@ -112,6 +117,7 @@ const App = () => {
     }
   }
   const handleClick = (item) => {
+    const imgNameToAdd = document.getElementsByClassName("knives-name")[item.target.id.slice(-1)].textContent;
     const priceToAdd = document.getElementsByClassName("knives-price")[item.target.id.slice(-1)].innerHTML.slice(1);
     const itemToAdd = document.getElementsByClassName("knives-images")[item.target.id.slice(-1)].id;
     console.log(`the item is ${itemToAdd}`)
@@ -119,7 +125,7 @@ const App = () => {
     console.log('amt:', amountToAdd.value);
     if (Number(amountToAdd.value) !== 0) {
       setCount(count + Number(amountToAdd.value))
-      sendItemToCart(itemToAdd, Number(amountToAdd.value), Number(priceToAdd));
+      sendItemToCart(itemToAdd, Number(amountToAdd.value), Number(priceToAdd), imgNameToAdd);
     }
   }
   return (
@@ -129,11 +135,11 @@ const App = () => {
         <Routes>
           <Route path='/about' element={<About />} />
           <Route path='/shop' element={<Shop />} />
-          <Route path='/bowie-knives' element={<BowieKnives handleClick={handleClick}/>} />
+          <Route path='/bowie-knives' element={<BowieKnives handleClick={handleClick} />} />
           <Route path='/butterfly-knives' element={<ButterflyKnives handleClick={handleClick} />} />
           <Route path='/stiletto-knives' element={<StilettoKnives handleClick={handleClick} />} />
           <Route path='/tactical-knives' element={<TacticalKnives handleClick={handleClick} />} />
-          <Route path='/cart' element={<Cart cartItems={cartItems} handleImgClickOnCart={handleImgClickOnCart}/>} />
+          <Route path='/cart' element={<Cart cartItems={cartItems} handleImgClickOnCart={handleImgClickOnCart} />} />
         </Routes>
       </div>
     </BrowserRouter>
