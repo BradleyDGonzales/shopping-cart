@@ -1,4 +1,35 @@
-const TacticalKnives = () => {
-    return <div>testing tactical Knives</div>
+import tacticalKnifeImages from "./imgTacticalKnives";
+import minus from '../img/minus.png'
+import plus from '../img/plus.png'
+const TacticalKnives = ({handleClick}) => {
+    function handleImgClick(e) {
+        const inputID = e.target.id.slice(-1)
+        const selectInput = document.getElementById(`input${inputID}`)
+        e.target.alt === 'plus' ? selectInput.value++ : selectInput.value--;
+    }
+    return (
+        <>
+            <div className='knives-list'>
+                {(tacticalKnifeImages.map((img, index) => (
+                    <div key={index} className="card">
+                        <img id={'tacticalknife' + index} className='knives-images' alt={img.imgName} src={img.img} />
+                        <h3 className='knives-name'>{img.imgName}</h3>
+                        <p className='knives-price' id={"price" + index}>${img.price.toFixed(2)}</p>
+                        <div className="quantity">
+                            <img onClick={(e) => handleImgClick(e)} id={"minus" + index} className="img-quantity" alt="minus" src={minus} />
+                            <input defaultValue={0} id={'input' + index} type="number" />
+                            <img onClick={(e) => handleImgClick(e)} id={"add" + index} className="img-quantity" alt="plus" src={plus} />
+
+                        </div>
+                        <button id={"addtocart" + index} onClick={(e) => handleClick(e)}> Add to cart</button>
+                        <button> Buy now</button>
+                    </div>
+                )
+
+                ))}
+
+            </div>
+        </>
+    )
 }
 export default TacticalKnives;

@@ -6,6 +6,7 @@ import Cart from './Cart';
 const ButterflyKnives = ({handleClick}) => {
 
     function handleImgClick(e) {
+        console.log('imgcliucktet')
         const inputID = e.target.id.slice(-1)
         const selectInput = document.getElementById(`input${inputID}`)
         e.target.alt === 'plus' ? selectInput.value++ : selectInput.value--;

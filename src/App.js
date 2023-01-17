@@ -13,7 +13,7 @@ const App = () => {
 
   const [count, setCount] = useState(0);
   const [cartItems, setCartItems] = useState([{}]);
-  const [imgName, setImgName] = useState('');
+
   const sendItemToCart = (item, amt, price, imgname) => {
     console.log('myprice', price);
     const itemImg = document.getElementById(item);
@@ -66,6 +66,19 @@ const App = () => {
     }
   }
 
+  const onDeleteClick = (item) => {
+    const objectImg = document.getElementById(`item${item.target.id.slice(-1)}`).src;
+    const inputValue = document.getElementById(`quantityinput${item.target.id.slice(-1)}`).value;
+    console.log(inputValue);
+    setCartItems(
+      cartItems.filter(el => el.img !== objectImg)
+    );
+    if (count > 0) {
+      setCount(
+        count - Number(inputValue)
+      );
+    }
+  }
   const handleImgClickOnCart = (itemToChange) => {
     const itemID = itemToChange.target.id.slice(-1);
     const originalPrice = document.getElementById(`price${itemID}`);
@@ -73,10 +86,11 @@ const App = () => {
     console.log(itemID)
     if (itemToChange.target.alt === "minus") {
       const selectInput = document.getElementById(`input${itemID}`);
-      selectInput.value === "1" ? selectInput.value = "1" :  selectInput.value = Number(selectInput.value) - 1;
+      const currentValue = selectInput.value;
+      currentValue === "1" ? selectInput.value = "1" : selectInput.value = Number(selectInput.value) - 1;
       const selectKnifeImg = document.getElementById(`item${itemID}`)
       console.log(selectKnifeImg.src)
-      if (count !== 1) {
+      if (count !== 1 && currentValue !== "1") {
         setCount(count - 1);
         const updatedCartItem = cartItems.map(existingItem => {
           if (existingItem.img === selectKnifeImg.src) {
@@ -139,7 +153,7 @@ const App = () => {
           <Route path='/butterfly-knives' element={<ButterflyKnives handleClick={handleClick} />} />
           <Route path='/stiletto-knives' element={<StilettoKnives handleClick={handleClick} />} />
           <Route path='/tactical-knives' element={<TacticalKnives handleClick={handleClick} />} />
-          <Route path='/cart' element={<Cart cartItems={cartItems} handleImgClickOnCart={handleImgClickOnCart} />} />
+          <Route path='/cart' element={<Cart onDeleteClick={onDeleteClick} cartItems={cartItems} handleImgClickOnCart={handleImgClickOnCart} />} />
         </Routes>
       </div>
     </BrowserRouter>

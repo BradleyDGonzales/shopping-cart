@@ -9,24 +9,31 @@ import tacticalknife7 from '../img/tactical-knife7.jpg'
 const tacticalKnifeImages = [{
     img: tacticalknife1,
     imgName: "Anger of the Land",
+    price: 746.66
 },{
     img: tacticalknife2,
-    imgName: "Darksword"
+    imgName: "Darksword",
+    price: 676.67
 },{
     img: tacticalknife3,
     imgName: "Save the King",
+    price: 499.99
 },{
     img: tacticalknife4,
     imgName: "The Brotherhood",
+    price: 571.33
 },{
     img: tacticalknife5,
     imgName: "Eclipse", 
+    price: 101.01
 },{
     img: tacticalknife6,
-    imgName: "Survivor's Knife"
+    imgName: "Survivor's Knife",
+    price: 50.00
 },{
     img: tacticalknife7,
-    imgName: "Dark Knight's Arm"
+    imgName: "Dark Knight's Arm",
+    price: 330.33
 }]
 
 export default tacticalKnifeImages;
