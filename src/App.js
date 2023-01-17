@@ -85,7 +85,7 @@ const App = () => {
     console.log(originalPrice);
     console.log(itemID)
     if (itemToChange.target.alt === "minus") {
-      const selectInput = document.getElementById(`input${itemID}`);
+      const selectInput = document.getElementById(`quantityinput${itemID}`);
       const currentValue = selectInput.value;
       currentValue === "1" ? selectInput.value = "1" : selectInput.value = Number(selectInput.value) - 1;
       const selectKnifeImg = document.getElementById(`item${itemID}`)
@@ -109,7 +109,7 @@ const App = () => {
       }
     }
     else if (itemToChange.target.alt === "plus") {
-      const selectInput = document.getElementById(`input${itemID}`);
+      const selectInput = document.getElementById(`quantityinput${itemID}`);
       selectInput.value = Number(selectInput.value) + 1;
       const selectKnifeImg = document.getElementById(`item${itemID}`)
       console.log(selectKnifeImg.src)
