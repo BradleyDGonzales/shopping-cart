@@ -37,7 +37,7 @@ const bowieKnifeImages = [{
     price: 310.00
 }, {
     img: bowieknife8,
-    imgName: "Edge of Ultima",
+    imgName: "Around the World",
     price: 399.99
 }]
 

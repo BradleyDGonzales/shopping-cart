@@ -1,7 +1,8 @@
 import bowieKnifeImages from "./imgBowieKnives";
 import minus from '../img/minus.png'
 import plus from '../img/plus.png'
-const BowieKnives = ({handleClick}) => {
+import { Link } from "react-router-dom";
+const BowieKnives = ({ handleClick }) => {
     function handleImgClick(e) {
         const inputID = e.target.id.slice(-1)
         const selectInput = document.getElementById(`input${inputID}`)
@@ -17,12 +18,14 @@ const BowieKnives = ({handleClick}) => {
                         <p className='knives-price' id={"price" + index}>${img.price.toFixed(2)}</p>
                         <div className="quantity">
                             <img onClick={(e) => handleImgClick(e)} id={"minus" + index} className="img-quantity" alt="minus" src={minus} />
-                            <input defaultValue={0} id={'input' + index} type="number"></input>
+                            <input defaultValue={1} id={'input' + index} type="text"></input>
                             <img onClick={(e) => handleImgClick(e)} id={"add" + index} className="img-quantity" alt="plus" src={plus} />
 
                         </div>
-                        <button id={"addtocart" + index} onClick={(e) => handleClick(e)}> Add to cart</button>
-                        <button> Buy now</button>
+                        <div className="options">
+                            <button id={"addtocart" + index} className="addtocartbutton" onClick={(e) => handleClick(e)}> Add to cart</button>
+                            <Link onClick={(e) => handleClick(e)} className="buynowlink" id={"buynow" + index} to='/cart'>Buy now</Link>
+                        </div>
                     </div>
                 )
 

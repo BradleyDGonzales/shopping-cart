@@ -1,15 +1,18 @@
 import butterflyKnifeImages from './imgButterflyKnives';
 import minus from '../img/minus.png'
 import plus from '../img/plus.png'
-import { useState } from 'react';
-import Cart from './Cart';
-const ButterflyKnives = ({handleClick}) => {
+import { Link } from 'react-router-dom';
+const ButterflyKnives = ({ handleClick }) => {
 
     function handleImgClick(e) {
-        console.log('imgcliucktet')
         const inputID = e.target.id.slice(-1)
         const selectInput = document.getElementById(`input${inputID}`)
-        e.target.alt === 'plus' ? selectInput.value++ : selectInput.value--;
+        if (parseInt(selectInput.value) === 1 && e.target.alt === 'minus') {
+            return null;
+        }
+        else {
+            e.target.alt === 'plus' ? selectInput.value++ : selectInput.value--;
+        }
     }
     return (
         <>
@@ -21,12 +24,13 @@ const ButterflyKnives = ({handleClick}) => {
                         <p className='knives-price' id={"price" + index}>${img.price.toFixed(2)}</p>
                         <div className="quantity">
                             <img onClick={(e) => handleImgClick(e)} id={"minus" + index} className="img-quantity" alt="minus" src={minus} />
-                            <input defaultValue={0} id={'input' + index} type="number"></input>
+                            <input defaultValue={1} id={'input' + index} type="text"></input>
                             <img onClick={(e) => handleImgClick(e)} id={"add" + index} className="img-quantity" alt="plus" src={plus} />
-
                         </div>
-                        <button id={"addtocart" + index} onClick={(e) => handleClick(e)}> Add to cart</button>
-                        <button> Buy now</button>
+                        <div className="options">
+                            <button id={"addtocart" + index} className="addtocartbutton" onClick={(e) => handleClick(e)}> Add to cart</button>
+                            <Link onClick={(e) => handleClick(e)} className="buynowlink" id={"buynow" + index} to='/cart'>Buy now</Link>
+                        </div>
                     </div>
                 )
 

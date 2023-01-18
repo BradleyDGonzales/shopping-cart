@@ -1,21 +1,21 @@
 import './App.css';
 import Navigation from './components/Navigation';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import About from './components/About';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Shop from './components/Shop';
 import BowieKnives from './components/BowieKnives';
 import ButterflyKnives from './components/ButterflyKnives'
 import StilettoKnives from './components/StilettoKnives';
 import TacticalKnives from './components/TacticalKnives';
 import Cart from "./components/Cart";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Home from './components/Home';
+import Checkout from './components/Checkout';
 const App = () => {
 
   const [count, setCount] = useState(0);
   const [cartItems, setCartItems] = useState([{}]);
 
   const sendItemToCart = (item, amt, price, imgname) => {
-    console.log('myprice', price);
     const itemImg = document.getElementById(item);
     if (cartItems.length === 1) {
       setCartItems(
@@ -69,7 +69,6 @@ const App = () => {
   const onDeleteClick = (item) => {
     const objectImg = document.getElementById(`item${item.target.id.slice(-1)}`).src;
     const inputValue = document.getElementById(`quantityinput${item.target.id.slice(-1)}`).value;
-    console.log(inputValue);
     setCartItems(
       cartItems.filter(el => el.img !== objectImg)
     );
@@ -81,15 +80,11 @@ const App = () => {
   }
   const handleImgClickOnCart = (itemToChange) => {
     const itemID = itemToChange.target.id.slice(-1);
-    const originalPrice = document.getElementById(`price${itemID}`);
-    console.log(originalPrice);
-    console.log(itemID)
     if (itemToChange.target.alt === "minus") {
       const selectInput = document.getElementById(`quantityinput${itemID}`);
       const currentValue = selectInput.value;
       currentValue === "1" ? selectInput.value = "1" : selectInput.value = Number(selectInput.value) - 1;
       const selectKnifeImg = document.getElementById(`item${itemID}`)
-      console.log(selectKnifeImg.src)
       if (count !== 1 && currentValue !== "1") {
         setCount(count - 1);
         const updatedCartItem = cartItems.map(existingItem => {
@@ -112,7 +107,6 @@ const App = () => {
       const selectInput = document.getElementById(`quantityinput${itemID}`);
       selectInput.value = Number(selectInput.value) + 1;
       const selectKnifeImg = document.getElementById(`item${itemID}`)
-      console.log(selectKnifeImg.src)
       setCount(count + 1);
       const updatedCartItem = cartItems.map(existingItem => {
         if (existingItem.img === selectKnifeImg.src) {
@@ -134,9 +128,7 @@ const App = () => {
     const imgNameToAdd = document.getElementsByClassName("knives-name")[item.target.id.slice(-1)].textContent;
     const priceToAdd = document.getElementsByClassName("knives-price")[item.target.id.slice(-1)].innerHTML.slice(1);
     const itemToAdd = document.getElementsByClassName("knives-images")[item.target.id.slice(-1)].id;
-    console.log(`the item is ${itemToAdd}`)
     const amountToAdd = document.getElementById(`input${item.target.id.slice(-1)}`)
-    console.log('amt:', amountToAdd.value);
     if (Number(amountToAdd.value) !== 0) {
       setCount(count + Number(amountToAdd.value))
       sendItemToCart(itemToAdd, Number(amountToAdd.value), Number(priceToAdd), imgNameToAdd);
@@ -147,7 +139,9 @@ const App = () => {
       <div className="App">
         <Navigation count={count} />
         <Routes>
-          <Route path='/about' element={<About />} />
+          <Route path='' element={<Navigate to="/home" />} />
+          <Route path='/checkout' element={<Checkout />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/bowie-knives' element={<BowieKnives handleClick={handleClick} />} />
           <Route path='/butterfly-knives' element={<ButterflyKnives handleClick={handleClick} />} />
