@@ -9,6 +9,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Getting started
+
+```
+git clone https://github.com/BradleyDGonzales/shopping-cart.git
+cd shopping-cart
+npm install
+npm start
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
