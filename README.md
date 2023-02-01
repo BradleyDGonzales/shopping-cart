@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Arthur's Vault
+<h3>A simple fake store React app </h3>
+<p>Arthur's Vault is a fake shopping website that tries to mimic <a href="https://vadersvault.com/">Vader's Vault</a> (as in the idea of selling knives compared to lightsabers)</p>
+
+## Built with
+
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

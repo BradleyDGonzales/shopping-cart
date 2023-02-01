@@ -4,7 +4,7 @@ import plus from '../img/plus.png'
 import uniqid from 'uniqid'
 import emptycart from '../img/empty-cart.png'
 import { Link } from "react-router-dom";
-const Cart = ({ cartItems, handleImgClickOnCart, onDeleteClick }) => {
+const Cart = ({ cartItems, handleImgClickOnCart, onDeleteClick, handleCheckout }) => {
     const [overallTotal, setOverallTotal] = useState(0)
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const Cart = ({ cartItems, handleImgClickOnCart, onDeleteClick }) => {
                     </div>
                 }
                 {overallTotal !== 0 ? <p className="emptyCartText">{`Total $: ` + overallTotal.toFixed(2)} </p> : null}
-                {overallTotal === 0 ? null : <Link to={"/checkout"}>
+                {overallTotal === 0 ? null : <Link onClick={() => handleCheckout()} to={"/checkout"}>
                     <button className="checkoutbutton">Checkout</button>
                 </Link>}
 

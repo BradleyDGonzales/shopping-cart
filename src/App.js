@@ -78,6 +78,11 @@ const App = () => {
       );
     }
   }
+
+  const handleCheckout = () => {
+    setCount(0);
+    setCartItems([{}])
+  }
   const handleImgClickOnCart = (itemToChange) => {
     const itemID = itemToChange.target.id.slice(-1);
     if (itemToChange.target.alt === "minus") {
@@ -147,7 +152,7 @@ const App = () => {
           <Route path='/butterfly-knives' element={<ButterflyKnives handleClick={handleClick} />} />
           <Route path='/stiletto-knives' element={<StilettoKnives handleClick={handleClick} />} />
           <Route path='/tactical-knives' element={<TacticalKnives handleClick={handleClick} />} />
-          <Route path='/cart' element={<Cart onDeleteClick={onDeleteClick} cartItems={cartItems} handleImgClickOnCart={handleImgClickOnCart} />} />
+          <Route path='/cart' element={<Cart onDeleteClick={onDeleteClick} handleCheckout={handleCheckout} cartItems={cartItems} handleImgClickOnCart={handleImgClickOnCart} />} />
         </Routes>
       </div>
     </BrowserRouter>
