@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.5da5ab6e.css",
+    "main.js": "/shopping-cart/static/js/main.a38d5b59.js",
+    "static/js/787.d6fe38e8.chunk.js": "/shopping-cart/static/js/787.d6fe38e8.chunk.js",
+    "static/media/bowie-knife4.jpg": "/shopping-cart/static/media/bowie-knife4.4b1813b1b28e2ed6edcf.jpg",
+    "static/media/butterfly-knife3.jpg": "/shopping-cart/static/media/butterfly-knife3.dbffd46c696699e7326d.jpg",
+    "static/media/butterfly-knife4.jpg": "/shopping-cart/static/media/butterfly-knife4.9a04abfb9f396a36782f.jpg",
+    "static/media/bowie-knife8.webp": "/shopping-cart/static/media/bowie-knife8.d04075843fc9bfadd3fc.webp",
+    "static/media/butterfly-knife1.jpg": "/shopping-cart/static/media/butterfly-knife1.eb4b14a1dd26f82a2ead.jpg",
+    "static/media/tactical-knife1.jpg": "/shopping-cart/static/media/tactical-knife1.3db0733f7664d3db4567.jpg",
+    "static/media/bowie-knife7.jpg": "/shopping-cart/static/media/bowie-knife7.b976e88ef2df14c70c46.jpg",
+    "static/media/bowie-knife2.jpg": "/shopping-cart/static/media/bowie-knife2.d58c5f96457b1d061b33.jpg",
+    "static/media/stiletto-knife1.webp": "/shopping-cart/static/media/stiletto-knife1.5e591e9ce9ea6a3b3b9d.webp",
+    "static/media/background-picture.jpg": "/shopping-cart/static/media/background-picture.1dd6c5fb0d76ddb93ff9.jpg",
+    "static/media/stiletto-knife3.jpg": "/shopping-cart/static/media/stiletto-knife3.b829f34a3aac9f1acb1c.jpg",
+    "static/media/tactical-knife2.jpg": "/shopping-cart/static/media/tactical-knife2.b67cfa4d82c8e7bdb409.jpg",
+    "static/media/tactical-knife3.jpg": "/shopping-cart/static/media/tactical-knife3.c24f8a36cd112f881ccb.jpg",
+    "static/media/butterfly-knife6.jpeg": "/shopping-cart/static/media/butterfly-knife6.769c12dbd82dd4366e9c.jpeg",
+    "static/media/bowie-knife3.webp": "/shopping-cart/static/media/bowie-knife3.21ce746b29aa7f2039cc.webp",
+    "static/media/tactical-knife6.avif": "/shopping-cart/static/media/tactical-knife6.95f69ebe5af9cfa45d92.avif",
+    "static/media/stiletto-knife4.jpg": "/shopping-cart/static/media/stiletto-knife4.92196ebea11046a19962.jpg",
+    "static/media/tactical-knife7.jpg": "/shopping-cart/static/media/tactical-knife7.0c2e1311e9f778674ba5.jpg",
+    "static/media/bowie-knife5.webp": "/shopping-cart/static/media/bowie-knife5.9bbe553e30c9b4ed3f19.webp",
+    "static/media/tactical-knife4.jpg": "/shopping-cart/static/media/tactical-knife4.a11c6d46cc274d58f427.jpg",
+    "static/media/stiletto-knife5.avif": "/shopping-cart/static/media/stiletto-knife5.98f76ab179dec6f8a690.avif",
+    "static/media/tactical-knife5.webp": "/shopping-cart/static/media/tactical-knife5.7cfca626f4b559b43bc6.webp",
+    "static/media/stiletto-knife2.jpg": "/shopping-cart/static/media/stiletto-knife2.fb97d247a077e2e225fc.jpg",
+    "static/media/bowie-knife1.jpg": "/shopping-cart/static/media/bowie-knife1.55fea49bb731823c74c9.jpg",
+    "static/media/bowie-knife6.jpg": "/shopping-cart/static/media/bowie-knife6.478c117ee9ae1c66fd69.jpg",
+    "static/media/butterfly-knife5.jpg": "/shopping-cart/static/media/butterfly-knife5.f4cb134f07ffdb8afd04.jpg",
+    "static/media/butterfly-knife2.jpeg": "/shopping-cart/static/media/butterfly-knife2.06b48c575bac87da7fe0.jpeg",
+    "static/media/empty-cart.png": "/shopping-cart/static/media/empty-cart.d988adffee4e652c0d94.png",
+    "index.html": "/shopping-cart/index.html",
+    "main.5da5ab6e.css.map": "/shopping-cart/static/css/main.5da5ab6e.css.map",
+    "main.a38d5b59.js.map": "/shopping-cart/static/js/main.a38d5b59.js.map",
+    "787.d6fe38e8.chunk.js.map": "/shopping-cart/static/js/787.d6fe38e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5da5ab6e.css",
+    "static/js/main.a38d5b59.js"
+  ]
+}
